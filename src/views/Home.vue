@@ -2,14 +2,14 @@
  * @Author: 
  * @Date: 2022-08-19 09:50:22
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-08-19 11:10:13
+ * @LastEditTime: 2022-08-19 15:30:20
  * @Description: 
 -->
 <template>
   <div class="home">
     <div v-for="item in projectsList"
       :key="item.id"
-      @click="pushToUrl('/expanding-cards')">
+      @click="pushToUrl(item.url)">
       {{item.name}}
     </div>
   </div>
@@ -31,8 +31,18 @@ export default class Home extends Vue {
     },
     {
       id: randomString(16),
-      url: "/expanding-cards",
-      name: "折叠卡片",
+      url: "/progress-steps",
+      name: "进度条",
+    },
+    {
+      id:randomString(16),
+      url:'/github-profiles',
+      name:'github个人页'
+    },
+    {
+      id:randomString(16),
+      url:'/image-carousel',
+      name:'图片滚动'
     },
   ];
 
